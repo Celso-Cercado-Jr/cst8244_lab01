@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main(void) {
-	puts("Hello World from QNX Neutrino RTOS!!!!"); /* prints Hello World!!! */
-	puts("@author Celso Cercado Jr. (cerc0004@algonquinlive.com)!");
-	puts("I like to play basketball!");
+	puts("Hello World from QNX Neutrino RTOS--!!!!"); /* prints Hello World!!! */
+	puts("@author Celso Cercado Jr.- (cerc0004@algonquinlive.com)!");
+	puts("I like playing basketball!");
 	return EXIT_SUCCESS;
 }
