@@ -43,7 +43,6 @@ int main(int argc, char *argv[]) {
 			response.answer = (float) request.left_hand + (float) request.right_hand;
 			test = request.left_hand + request.right_hand;
 
-
 			if(response.answer != test) {
 				response.error = SRVR_UNDEFINED;// check for undefined
 				strcpy(response.errorMsg, LOP);//
@@ -56,6 +55,9 @@ int main(int argc, char *argv[]) {
 				} else {
 					response.answer = (float) request.right_hand / (float) request.left_hand;
 					testAnswer = request.right_hand / request.left_hand;
+
+					response.answer = (float) request.left_hand / (float) request.right_hand;
+					testAnswer = request.left_hand / request.right_hand;
 
 					if(response.answer != testAnswer|| (request.left_hand > 0 && request.right_hand > 0 && response.answer < 0)) {
 						response.error = SRVR_UNDEFINED;//
