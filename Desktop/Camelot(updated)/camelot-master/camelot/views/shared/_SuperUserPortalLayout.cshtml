@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bouba.css" rel="stylesheet" />
+    <link href="~/Content/flaticon.css" rel="stylesheet" />
+    <link href="~/Content/circle.css" rel="stylesheet" />
+    <link href="~/Content/font/flaticon.css" rel="stylesheet" />
+    <link href="~/Content/progressBarStyles.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default user-nav">
+            <div class="container-fluid">
+                <img class="nav-logo" src="~/Images/Camelot_logo_final.png" alt="CAMELOT" />
+                <a class="navbar-brand" href="#">CAMELOT</a>
+                <div class="user-menu" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lancelot <span class="caret"></span></a>
+                            <ul class="dropdown-menu user-dropdown-menu">
+                                <li><a><img src="~/Images/scribe.png" alt="Scribe Status" /><!-- status image goes here--> Scribe</a></li>
+                                <li>@Html.ActionLink("Settings", "Settings", "Home", new { id = Session["user"] })</li>
+                                <li>@Html.ActionLink("Help", "Help", "Help")</li>
+                                <li> @Html.ActionLink("Logout", "Logout", "Home", null, new { onclick = "return confirm('Are you sure you want to Log Out?')" })
+</ul>
+                        </li>
+                    </ul>
+                </div><!-- /.user-menu -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <div class="header-bg-2"></div>
+    <!-- Side menu to navigate around the web application-->
+    <div class="row">
+        <div class="navbar-static-wrap col-lg-4">
+            <nav class="navbar navbar-inverse navbar-static">
+                <div>
+                    <div>
+                        <ul>
+                            <li>
+                                <img class="svg" src="~/Images/home_colour.svg" />
+                                @Html.ActionLink(
+                " ",
+                "ViewUserPortalLayout",
+                "Home",
+                null,
+                new
+                {
+                    @class = "mylink"
+                })
+                            </li>
+                            <li>
+                                <img class="svg" src="~/Images/users_colour.svg" />
+                                @Html.ActionLink(
+                        " ",
+                        " ",
+                        " ",
+                        null,
+                        new
+                        {
+                            @class = "mylink",
+                            @title = "Users"
+                        })
+                            </li>
+                            <li>
+                                <img class="svg" src="~/Images/modules_colour.svg" />
+                                @Html.ActionLink(
+                " ",
+                "Index",
+                "modules",
+                null,
+                new
+                {
+                    @class = "mylink"
+                })
+                            </li>
+                            <li>
+                                <img class="svg" src="~/Images/faqs_colour.svg" />
+                                @Html.ActionLink(
+                " ",
+                "Index",
+                "Faq",
+                null,
+                new
+                {
+                    @class = "mylink"
+                })
+                            </li>
+                            <li>
+                                <img class="svg" src="~/Images/chess_colour.svg" />
+                                @Html.ActionLink(
+                " ",
+                "Stats",
+                "users",
+                null,
+                new
+                {
+                    @class = "mylink"
+                })
+                            </li>
+                            <li>
+                                <img class="svg" src="~/Images/i_colour.svg" />
+                                @Html.ActionLink(
+                " ",
+                "Help",
+                "Home",
+                null,
+                new
+                {
+                    @class = "mylink"
+                })
+                            </li>
+                        </ul>
+                    </div> <!--.navbar-static-->
+                </div>
+            </nav>
+        </div>
+        <!-- body where content goes and changes from page to page-->
+        <div class="content-space col-lg-9">
+        </div>
+        <div class="content col-lg-9">
+            @RenderBody()
+        </div>
+    </div>
+    @RenderSection("Scripts", false)
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/custom-script.js"></script> <!-- Custom script -->
+</body>
+</html>
